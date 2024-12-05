@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Predictor</title>
+</head>
+<body>
+    <h1>Car Price Predictor</h1>
+    <form method="POST" action="/">
+        <label for="year">Year:</label>
+        <input type="number" name="year" required>
+        <label for="hand">Hand:</label>
+        <input type="number" name="hand" required>
+        <label for="price">Price:</label>
+        <input type="number" name="price" step="0.01" required>
+        <button type="submit">Add Data</button>
+    </form>
+    <hr>
+    <h2>Visualization</h2>
+    <img src="{{ plot_url }}" alt="Price Graph">
+    <hr>
+    <h2>Predict Price</h2>
+    <form method="POST" action="/predict">
+        <label for="year">Year:</label>
+        <input type="number" name="year" required>
+        <label for="hand">Hand:</label>
+        <input type="number" name="hand" required>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
